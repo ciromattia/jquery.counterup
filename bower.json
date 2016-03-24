@@ -1,12 +1,8 @@
 {
-  "name": "counterup",
-  "homepage": "https://github.com/bfintal/Counter-Up",
-  "author": {
-    "name": "Benjamin Intal",
-    "url": "https://github.com/bfintal/"
-  },
+  "name": "jquery.counterup",
+  "homepage": "https://github.com/ciromattia/jquery.counterup",
   "description": "A lightweight jQuery plugin that counts up to a targeted number when the number becomes visible.",
-  "main": "",
+  "main": "jquery.counterup.js",
   "moduleType": [],
   "keywords": [
     "jquery",
@@ -21,16 +17,22 @@
     "float",
     "animation"
   ],
-  "licenses": [
-    {
-      "type": "GPL2",
-      "url": "https://raw.github.com/bfintal/Counter-Up/master/LICENSE"
-    }
-  ],
   "dependencies": {
     "jquery": ">=1.5",
-    "waypoints": ">=2.0"
+    "waypoints": ">=4.0"
   },
-  "bugs": "https://github.com/bfintal/Counter-Up/issues",
-  "demo": "http://bfintal.github.io/Counter-Up/demo/demo.html"
+  "bugs": "https://github.com/ciromattia/jquery.counterup/issues",
+  "demo": "http://ciromattia.github.io/jquery.counterup/demo/index.html",
+  "authors": [
+    "Benjamin Intal",
+    "Ciro Mattia Gonano <ciromattia@gmail.com>"
+  ],
+  "license": "GPL-2.0",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
 }
