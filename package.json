@@ -23,6 +23,10 @@
     "float",
     "currency"
   ],
+  "dependencies": {
+    "jquery": ">=1.5.0",
+    "waypoints": ">=3.0"
+  },
   "author": "Benjamin Intal (https://github.com/bfintal/)",
   "contributors": [
     "Jeremy Paris (https://github.com/digsite)",
