@@ -6,12 +6,14 @@ jquery.counterup is a jQuery plugin that *animates* a number from zero (counting
 * integers `12345`
 * floats `0.1234`
 * formatted numbers `1,234,567.00`
+* time `21:45:00`
 
 Features:
 
-* Auto-detect for integers, floats or formatted numbers
+* Auto-detect for integers, floats or formatted numbers.
 * The plugin will also use the number of decimal places the original number is using.
-* Start counter with a different duration and delay by setting `data-counterup-time=""` and `data-counterup-delay=""`
+* Start counter with a different duration and delay by setting `data-counterup-time=""` and `data-counterup-delay=""`.
+* Lets you use your own formatter.
 * Lightweight: ~1kb
 * Minimal setup
 
@@ -33,14 +35,6 @@ bower install jquery.counterup
 ```
 <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.0/jquery.waypoints.min.js"></script>
 <script src="jquery.counterup.min.js"></script>
-```
-
-#### Using with a CDN:
-
-CDN provided by [jsDelivr CDN](http://www.jsdelivr.com/#!jquery.counterup)
-
-```
-<script src="//cdn.jsdelivr.net/jquery.counterup/1.0/jquery.counterup.min.js"></script>
 ```
 
 **HTML**
@@ -67,10 +61,15 @@ $('.counter').counterUp();
 ```
 $('.counter').counterUp({
     delay: 10,
-    time: 1000
+    time: 1000,
+    formatter: function (n) {
+      return n.replace(/,/g, '.');
+    });
 });
 ```
 
 `delay` - The delay in milliseconds per number count up
 
 `time` - The total duration of the count up animation
+
+`formatter` - A callback to format the number with

@@ -25,7 +25,8 @@
   "demo": "http://ciromattia.github.io/jquery.counterup/demo/index.html",
   "authors": [
     "Benjamin Intal",
-    "Ciro Mattia Gonano <ciromattia@gmail.com>"
+    "Jeremy Paris",
+    "Ciro Mattia Gonano"
   ],
   "license": "GPL-2.0",
   "ignore": [
