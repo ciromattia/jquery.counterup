@@ -60,7 +60,7 @@
 
                 // Add incremental seconds and convert back to time
                 if (isTime) {
-                    newNum = parseInt(s / divisions * i)
+                    newNum = parseInt(s / divisions * i);
                     var hours = parseInt(newNum / 3600 ) % 24;
                     var minutes = parseInt(newNum / 60 ) % 60;
                     var seconds = parseInt(newNum % 60, 10);
@@ -99,7 +99,10 @@
         };
 
         // Perform counts when the element gets into view
-        $this.waypoint(counterUpper, { offset: '100%', triggerOnce: true });
+        $this.waypoint(function(direction){
+            counterUpper();
+            this.destroy(); //-- Waypoint 3.0 version of triggerOnce
+        }, { offset: '100%'});
     });
 
   };
