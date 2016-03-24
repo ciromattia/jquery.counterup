@@ -1,5 +1,5 @@
 /*!
- * jquery.counterup.js 2.0.3
+ * jquery.counterup.js 2.0.4
  *
  * Copyright 2013, Benjamin Intal http://gambit.ph @bfintal
  * Released under the GPL v2 License
