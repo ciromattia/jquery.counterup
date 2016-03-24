@@ -1,2 +1,2 @@
-Counter-Up
+jquery.counterup
 ==========
