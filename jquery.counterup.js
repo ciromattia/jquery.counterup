@@ -15,6 +15,7 @@
     var settings = $.extend({
         'time': 400,
         'delay': 10,
+        'formatter': false,
         callback: function() {}
     }, options);
 
@@ -34,9 +35,7 @@
             var num = $this.text();
             var isComma = /[0-9]+,[0-9]+/.test(num);
             num = num.replace(/,/g, '');
-            var isInt = /^[0-9]+$/.test(num);
-            var isFloat = /^[0-9]+\.[0-9]+$/.test(num);
-            var decimalPlaces = isFloat ? (num.split('.')[1] || []).length : 0;
+            var decimalPlaces = (num.split('.')[1] || []).length;
 
             var isTime = /[0-9]+:[0-9]+:[0-9]+/.test(num);
 
@@ -54,13 +53,7 @@
             // Generate list of incremental numbers to display
             for (var i = divisions; i >= 1; i--) {
 
-                // Preserve as int if input was int
-                var newNum = parseInt(num / divisions * i);
-
-                // Preserve float if input was float
-                if (isFloat) {
-                    newNum = parseFloat(num / divisions * i).toFixed(decimalPlaces);
-                }
+                var newNum = parseFloat(num / divisions * i).toFixed(decimalPlaces);
 
                 // Add incremental seconds and convert back to time
                 if (isTime) {
@@ -77,7 +70,9 @@
                         newNum = newNum.toString().replace(/(\d+)(\d{3})/, '$1'+','+'$2');
                     }
                 }
-
+                if ($settings.formatter) {
+                    newNum = $settings.formatter.call(this, newNum);
+                }
                 nums.unshift(newNum);
             }
 
@@ -86,7 +81,7 @@
 
             // Updates the number until we're done
             var f = function() {
-                $this.text($this.data('counterup-nums').shift());
+                $this.html($this.data('counterup-nums').shift());
                 if ($this.data('counterup-nums').length) {
                     setTimeout($this.data('counterup-func'), counter.delay);
                 } else {
