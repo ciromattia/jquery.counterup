@@ -1,7 +1,7 @@
-Counter-Up
+jquery.counterup
 ==========
 
-Counter-Up is a jQuery plugin that *animates* a number from zero (counting up towards it). It supports counting up:
+jquery.counterup is a jQuery plugin that *animates* a number from zero (counting up towards it). It supports counting up:
 
 * integers `12345`
 * floats `0.1234`
@@ -20,18 +20,18 @@ Features:
 Demo
 ====
 
-**[DEMO](http://bfintal.github.io/Counter-Up/demo/demo.html)**
+**[DEMO](http://ciromattia.github.io/jquery.counterup/demo/index.html)**
 
 Install with Bower
 ```
-bower install counterup
+bower install jquery.counterup
 ```
 =====
 
 **Include**
 
 ```
-<script src="http://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.0/jquery.waypoints.min.js"></script>
 <script src="jquery.counterup.min.js"></script>
 ```
 
@@ -74,10 +74,3 @@ $('.counter').counterUp({
 `delay` - The delay in milliseconds per number count up
 
 `time` - The total duration of the count up animation
-
-Social Stuff
-============
-
-Twitter: [@bfintal](https://twitter.com/bfintal) & [@gambitph](https://twitter.com/gambitph)
-
-Google+: <a href='https://plus.google.com/113101541449927918834' rel='author'>+Benjamin Intal</a>
