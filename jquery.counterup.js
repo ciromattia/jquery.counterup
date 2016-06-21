@@ -1,12 +1,12 @@
 /*!
- * jquery.counterup.js 2.0.4
+ * jquery.counterup.js 2.0.5
  *
  * Copyright 2013, Benjamin Intal http://gambit.ph @bfintal
  * Released under the GPL v2 License
  *
  * Amended by Jeremy Paris, Ciro Mattia Gonano and others
  *
- * Date: Mar 24, 2016
+ * Date: Jun 21, 2016
  */
 (function ($) {
     "use strict";
@@ -84,6 +84,11 @@
 
                 // Updates the number until we're done
                 var f = function () {
+                	if(!$this.data('counterup-nums'))
+                	{
+ 						settings.callback.call(this);
+ 						return;
+ 					}
                     $this.html($this.data('counterup-nums').shift());
                     if ($this.data('counterup-nums').length) {
                         setTimeout($this.data('counterup-func'), counter.delay);
