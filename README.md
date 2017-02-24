@@ -47,7 +47,7 @@ With default values from plugin instantiation.
 ```
 With values from `data` attribute.
 ```
-<span class="counter" data-counterup-time="1500" data-counterup-delay="30">1,234,567.00</span>
+<span class="counter" data-counterup-time="1500" data-counterup-delay="30" data-counterup-beginat="100">1,234,567.00</span>
 ```
 
 **jQuery**
@@ -62,6 +62,7 @@ $('.counter').counterUp();
 $('.counter').counterUp({
     delay: 10,
     time: 1000,
+    beginAt: 100,
     formatter: function (n) {
       return n.replace(/,/g, '.');
     });
@@ -71,5 +72,7 @@ $('.counter').counterUp({
 `delay` - The delay in milliseconds per number count up
 
 `time` - The total duration of the count up animation
+
+`beginAt` - The number from which to count up
 
 `formatter` - A callback to format the number with

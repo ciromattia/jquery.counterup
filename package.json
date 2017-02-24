@@ -1,6 +1,6 @@
 {
   "name": "jquery.counterup",
-  "version": "2.0.5",
+  "version": "2.0.6",
   "description": "jquery.counterup is a lightweight jQuery plugin that counts up to a targeted number when the number becomes visible.",
   "main": "jquery.counterup.js",
   "scripts": {
@@ -30,7 +30,8 @@
   "author": "Benjamin Intal (https://github.com/bfintal/)",
   "contributors": [
     "Jeremy Paris (https://github.com/digsite)",
-    "Ciro Mattia Gonano <ciromattia@gmail.com> (https://github.com/ciromattia)"
+    "Ciro Mattia Gonano <ciromattia@gmail.com> (https://github.com/ciromattia)",
+    "Josh Lee (https://github.com/Jishaxe)"
   ],
   "license": "GPL-2.0",
   "bugs": {

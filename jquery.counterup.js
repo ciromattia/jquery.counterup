@@ -1,5 +1,5 @@
 /*!
- * jquery.counterup.js 2.0.5
+ * jquery.counterup.js 2.0.6
  *
  * Copyright 2013, Benjamin Intal http://gambit.ph @bfintal
  * Released under the GPL v2 License
@@ -17,6 +17,7 @@
         var settings = $.extend({
                 'time': 400,
                 'delay': 10,
+                'beginAt': 0,
                 'formatter': false,
                 callback: function () {
                 }
@@ -29,7 +30,8 @@
             var $this = $(this),
                 counter = {
                     time: $(this).data('counterup-time') || settings.time,
-                    delay: $(this).data('counterup-delay') || settings.delay
+                    delay: $(this).data('counterup-delay') || settings.delay,
+                    beginAt: $(this).data('counterup-beginat') || settings.beginAt
                 };
 
             var counterUpper = function () {
@@ -39,6 +41,8 @@
                 var isComma = /[0-9]+,[0-9]+/.test(num);
                 num = num.replace(/,/g, '');
                 var decimalPlaces = (num.split('.')[1] || []).length;
+                if ($settings.beginAt > num)
+                    $settings.beginAt = num;
 
                 var isTime = /[0-9]+:[0-9]+:[0-9]+/.test(num);
 
@@ -54,7 +58,7 @@
                 }
 
                 // Generate list of incremental numbers to display
-                for (var i = divisions; i >= 1; i--) {
+                for (var i = divisions; i >= $settings.beginAt / num * divisions; i--) {
 
                     var newNum = parseFloat(num / divisions * i).toFixed(decimalPlaces);
 
@@ -80,7 +84,7 @@
                 }
 
                 $this.data('counterup-nums', nums);
-                $this.text('0');
+                $this.text($settings.beginAt);
 
                 // Updates the number until we're done
                 var f = function () {
