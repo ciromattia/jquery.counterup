@@ -62,6 +62,7 @@ $('.counter').counterUp();
 $('.counter').counterUp({
     delay: 10,
     time: 1000,
+    offset: 70,
     beginAt: 100,
     formatter: function (n) {
       return n.replace(/,/g, '.');
@@ -72,6 +73,9 @@ $('.counter').counterUp({
 `delay` - The delay in milliseconds per number count up
 
 `time` - The total duration of the count up animation
+
+`offset` - The viewport percentile from which the counter starts (by default it's 100, meaning it's triggered
+at the very moment the element enters the viewport)
 
 `beginAt` - The number from which to count up
 
