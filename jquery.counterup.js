@@ -41,7 +41,7 @@
             var counterUpper = function () {
                 var nums = [];
                 var divisions = counter.time / counter.delay;
-                var num = $(this).attr('data-num') ? $(this).attr('data-num') : $this.text();
+                var num = $this.attr('data-num') ? $this.attr('data-num') : $this.text();
                 var isComma = /[0-9]+,[0-9]+/.test(num);
                 num = num.replace(/,/g, '');
                 var decimalPlaces = (num.split('.')[1] || []).length;
