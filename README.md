@@ -66,7 +66,7 @@ $('.counter').counterUp({
     beginAt: 100,
     formatter: function (n) {
       return n.replace(/,/g, '.');
-    });
+    }
 });
 ```
 
