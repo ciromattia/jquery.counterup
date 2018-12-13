@@ -48,7 +48,7 @@
                 if (counter.beginAt > num)
                     counter.beginAt = num;
 
-                var isTime = /[0-9]+:[0-9]+:[0-9]+/.test(num);
+                var isTime = /^(\d{2,3}(?!\d):?){2,3}$/.test(num);
 
                 // Convert time to total seconds
                 if (isTime) {
