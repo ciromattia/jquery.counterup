@@ -48,7 +48,7 @@
                 if (counter.beginAt > num)
                     counter.beginAt = num;
 
-                var isTime = /[0-9]+:[0-9]+:[0-9]+/.test(num);
+                var isTime = /^(\d{2,3}(?!\d):?){2,3}$/.test(num);
 
                 // Convert time to total seconds
                 if (isTime) {
@@ -61,17 +61,19 @@
                     }
                 }
 
+                counter.divider = (!isTime) ? num * divisions : s * divisions;
+
                 // Generate list of incremental numbers to display
-                for (var i = divisions; i >= counter.beginAt / num * divisions; i--) {
+                for (var i = divisions; i >= counter.beginAt / counter.divider; i--) {
 
                     var newNum = parseFloat(num / divisions * i).toFixed(decimalPlaces);
 
                     // Add incremental seconds and convert back to time
                     if (isTime) {
                         newNum = parseInt(s / divisions * i);
-                        var hours = parseInt(newNum / 3600) % 24;
-                        var minutes = parseInt(newNum / 60) % 60;
-                        var seconds = parseInt(newNum % 60, 10);
+                        var hours = Math.floor(newNum / 3600);
+                        var minutes = Math.floor((newNum - (hours*3600)) / 60);
+                        var seconds = Math.floor(newNum % 60);
                         newNum = (hours < 10 ? "0" + hours : hours) + ":" + (minutes < 10 ? "0" + minutes : minutes) + ":" + (seconds < 10 ? "0" + seconds : seconds);
                     }
 
