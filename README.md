@@ -85,3 +85,6 @@ at the very moment the element enters the viewport)
 `formatter` - A callback to format the number with
 
 ### hello work
+Git and GitHub for Poets
+Git and GitHub for Poets
+Git and GitHub for Poets
