@@ -1,5 +1,5 @@
 # jquery.counterup
-
+dzdzdzdzd
 jquery.counterup is a jQuery plugin that _animates_ a number from zero (counting up towards it). It supports counting up:
 
 - integers `12345`
